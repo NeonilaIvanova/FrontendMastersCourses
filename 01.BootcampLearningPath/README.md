@@ -1,5 +1,5 @@
 # Bootcamp Learning Path
-https://frontendmasters.com/bootcamp/ <br>
-time:
-01 - 1 hour, 47 minutes
-02 - 4 hours, 11 minutes
+https://frontendmasters.com/bootcamp/<br>
+time:<br>
+01 - 1 hour, 47 minutes<br> 
+02 - 4 hours, 11 minutes<br>
