@@ -1,0 +1,168 @@
+<!--Indicates that this is html 5-->
+<!DOCTYPE html>
+<!--Establishings html document-->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML notes</title>
+</head>
+
+<body>
+    <!--HEADINGS-->
+    <!--https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Heading_Elements-->
+    <!--The HTML <h1>–<h6> elements represent six levels of section headings. <h1> is the highest section level and <h6> is the lowest.-->
+    <!--Heading information can be used by user agents to construct a table of contents for a document automatically.
+    Avoid using heading elements to resize text. Instead, use the CSS font-size property.
+    Avoid skipping heading levels: always start from <h1>, followed by <h2> and so on.
+    Use only one <h1> per page or view. It should concisely describe the overall purpose of the content.
+    Using more than one <h1> will not result in an error, but is not considered a best practice. It is beneficial for screenreader users, and SEO.
+    While HTML5 allows a <h1> per sectioning element, it is not considered best practice, and may subvert the expectations of how screen reader users navigate.-->
+    <h1>Heading level 1</h1>
+    <h2>Heading level 2</h2>
+    <h3>Heading level 3</h3>
+    <h4>Heading level 4</h4>
+    <h5>Heading level 5</h5>
+    <h6>Heading level 6</h6>
+
+    <!--PARAGRAPH-->
+    <!--https://developer.mozilla.org/en-US/docs/Web/HTML/Element/p-->
+    <!--The HTML <p> element represents a paragraph. Paragraphs are usually represented in visual media as blocks of text separated from adjacent blocks by blank lines and/or first-line indentation, but HTML paragraphs can be any structural grouping of related content, such as images or form fields.
+    Paragraphs are block-level elements, and notably will automatically close if another block-level element is parsed before the closing </p> tag.-->
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Commodi dicta est quia exercitationem quos, blanditiis maxime, cupiditate itaque odit, dolores omnis fugit nesciunt sint repellat ipsum possimus reprehenderit voluptas sapiente.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, at dicta quidem placeat eius ea praesentium eum quasi blanditiis laboriosam quisquam? Optio mollitia amet asperiores, neque sapiente voluptatibus eos eaque!</p>
+    <p title="About W3Schools">W3Schools is a web developer's site.</p>
+
+    <!--LI-->
+    <!--https://developer.mozilla.org/en-US/docs/Web/HTML/Element/li-->
+    <!--The HTML <li> element is used to represent an item in a list. It must be contained in a parent element: an ordered list (<ol>), an unordered list (<ul>), or a menu (<menu>). In menus and unordered lists, list items are usually displayed using bullet points. In ordered lists, they are usually displayed with an ascending counter on the left, such as a number or letter.-->
+    <!--attributes
+    - value
+    This integer attribute indicates the current ordinal value of the list item as defined by the <ol> element. The only allowed value for this attribute is a number, even if the list is displayed with Roman numerals or letters. List items that follow this one continue numbering from the value set.-->
+
+    <!--UNORDERED LIST-->
+    <!--https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ul-->
+    <!--The HTML <ul> element represents an unordered list of items, typically rendered as a bulleted list.-->
+    <!--The <ul> element is for grouping a collection of items that do not have a numerical ordering, and their order in the list is meaningless. Typically, unordered-list items are displayed with a bullet, which can be of several forms, like a dot, a circle, or a square. The bullet style is not defined in the HTML description of the page, but in its associated CSS, using the list-style-type property.
+    The <ul> and <ol> elements may be nested as deeply as desired. Moreover, the nested lists may alternate between <ol> and <ul> without restriction.
+    The <ol> and <ul> elements both represent a list of items. They differ in that, with the <ol> element, the order is meaningful. As a rule of thumb to determine which one to use, try changing the order of the list items; if the meaning is changed, the <ol> element should be used, otherwise you can use <ul>.-->
+    <ul>
+        <li>first item</li>
+        <li>second item</li>
+        <li>third item</li>
+    </ul>
+
+    <!--ORDERED LIST-->
+    <!--https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ol-->
+    <!--The HTML <ol> element represents an ordered list of items — typically rendered as a numbered list.-->
+    <!--Typically, ordered list items display with a preceding marker, such as a number or letter.
+    The <ol> and <ul> elements may nest as deeply as desired, alternating between <ol> and <ul> however you like.
+    The <ol> and <ul> elements both represent a list of items. The difference is with the <ol> element, the order is meaningful.
+    To determine which list to use, try changing the order of the list items; if the meaning changes, use the <ol> element — otherwise you can use <ul>.-->
+    <!--attributes
+    - reversed
+    This Boolean attribute specifies that the list’s items are in reverse order. Items will be numbered from high to low.
+    - start
+    An integer to start counting from for the list items. Always an Arabic numeral (1, 2, 3, etc.), even when the numbering type is letters or Roman numerals. For example, to start numbering elements from the letter "d" or the Roman numeral "iv," use start="4".-->
+    <ol>
+        <li>Fee</li>
+        <li>Fi</li>
+        <li>Fo</li>
+        <li>Fum</li>
+    </ol>
+
+    <!--The Line Break element-->
+    <!--https://developer.mozilla.org/en-US/docs/Web/HTML/Element/br-->
+    <!--The HTML <br> element produces a line break in text (carriage-return). It is useful for writing a poem or an address, where the division of lines is significant.-->
+    Mozilla<br> 331 E. Evelyn Avenue<br> Mountain View, CA<br> 94041<br> USA<br>
+
+    <!--The Block Quotation element-->
+    <!--https://developer.mozilla.org/en-US/docs/Web/HTML/Element/blockquote-->
+    <!--The HTML <blockquote> Element (or HTML Block Quotation Element) indicates that the enclosed text is an extended quotation. Usually, this is rendered visually by indentation. A URL for the source of the quotation may be given using the cite attribute, while a text representation of the source can be given using the <cite> element.-->
+    <!--To include shorter quotes inline rather than in a separate block, use the <q> (Quotation) element.-->
+    <!--attributes
+    - cite
+    A URL that designates a source document or message for the information quoted. This attribute is intended to point to information explaining the context or the reference for the quote.-->
+    <blockquote cite="https://tools.ietf.org/html/rfc1149">
+        <p>Avian carriers can provide high delay, low throughput, and low altitude service. The connection topology is limited to a single point-to-point path for each carrier, used with standard carriers, but many carriers can be used without significant
+            interference with each other, outside of early spring. This is because of the 3D ether space available to the carriers, in contrast to the 1D ether used by IEEE802.3. The carriers have an intrinsic collision avoidance system, which increases
+            availability.
+        </p>
+    </blockquote>
+
+    <!--The Citation element-->
+    <!--https://developer.mozilla.org/en-US/docs/Web/HTML/Element/cite-->
+    <!--The HTML Citation element (<cite>) is used to describe a reference to a cited creative work, and must include the title of that work. The reference may be in an abbreviated form according to context-appropriate conventions related to citation metadata.-->
+    <!--It's worth noting that the W3C specification says that a reference to a creative work, as included within a <cite> element, may include the name of the work’s author. However, the WHATWG specification for <cite> says the opposite: that a person’s name must never be included, under any circumstances.-->
+    <p>More information can be found in <cite>[ISO-0000]</cite>.</p>
+
+    <!--The Anchor element-->
+    <!--https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a-->
+    <!--The HTML <a> element (or anchor element), with its href attribute, creates a hyperlink to web pages, files, email addresses, locations in the same page, or anything else a URL can address. Content within each <a> should indicate the link's destination.-->
+    <!--attributes
+    - download (HTML5)
+    Prompts the user to save the linked URL instead of navigating to it. Can be used with or without a value:
+    Without a value, the browser will suggest a filename/extension, generated from various sources:
+    The Content-Disposition HTTP header;
+    The final segment in the URL path;
+    The media type (from the (Content-Type header, the start of a data: URL, or Blob.type for a blob: URL);
+    Defining a value suggests it as the filename. / and \ characters are converted to underscores (_). Filesystems may forbid other characters in filenames, so browsers will adjust the suggested name if necessary.
+    - href
+    The URL that the hyperlink points to. Links are not restricted to HTTP-based URLs — they can use any URL scheme supported by browsers:
+    Sections of a page with fragment URLs;
+    Pieces of media files with media fragments;
+    Telephone numbers with tel: URLs;
+    Email addresses with mailto: URLs;
+    While web browsers may not support other URL schemes, web sites can with registerProtocolHandler();
+    - hreflang
+    Hints at the human language of the linked URL. No built-in functionality. Allowed values are the same as the global lang attribute.
+    - ping
+    A space-separated list of URLs. When the link is followed, the browser will send POST requests with the body PING to the URLs. Typically for tracking.
+    - rel
+    The relationship of the linked URL as space-separated link types.
+    - target
+    Where to display the linked URL, as the name for a browsing context (a tab, window, or <iframe>). The following keywords have special meanings for where to load the URL:
+    _self: the current browsing context. (Default); 
+    _blank: usually a new tab, but users can configure browsers to open a new window instead;
+    _parent: the parent browsing context of the current one. If no parent, behaves as _self;
+    _top: the topmost browsing context (the "highest" context that’s an ancestor of the current one). If no ancestors, behaves as _self;
+    Note: When using target, add rel="noreferrer noopener" to avoid exploitation of the window.opener API.
+    Note: In newer browser versions (e.g. Firefox 79+) setting target="_blank" on <a> elements implicitly provides the same rel behavior as setting rel="noopener".
+    - type
+    Hints at the linked URL’s format with a MIME type. No built-in functionality.-->
+    <a href="https://www.mozilla.com">Mozilla</a>
+    <!--anchor link-->
+    <p><a id="top">Anchor: TOP</a></p>
+    <p><a href="#top">Link to an anchor: Back to top</a></p>
+
+    <!--The Image Embed element-->
+    <!--https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img-->
+    <!--The src attribute is required, and contains the path to the image you want to embed.
+    The alt attribute holds a text description of the image, which isn't mandatory but is incredibly useful for accessibility — screen readers read this description out to their users so they know what the image means. Alt text is also displayed on the page if the image can't be loaded for some reason: for example, network errors, content blocking, or linkrot.-->
+    <img src="https://developer.mozilla.org/static/img/favicon144.png" alt="MDN logo">
+
+    <!--The Strong Importance element-->
+    <!--https://developer.mozilla.org/en-US/docs/Web/HTML/Element/strong-->
+    <!--The HTML Strong Importance Element (<strong>) indicates that its contents have strong importance, seriousness, or urgency. Browsers typically render the contents in bold type.-->
+    <p><strong>Important:</strong> Before proceeding, make sure you add plenty of butter.</p>
+
+    <!--The Emphasis element-->
+    <!--https://developer.mozilla.org/en-US/docs/Web/HTML/Element/em-->
+    <!--The HTML <em> element marks text that has stress emphasis. The <em> element can be nested, with each level of nesting indicating a greater degree of emphasis.-->
+    <p>
+        In HTML 5, what was previously called
+        <em>block-level</em> content is now called
+        <em>flow</em> content.
+    </p>
+
+    <!--What is the difference between <strong> and <em> ?
+    While <em> is used to change the meaning of a sentence as spoken emphasis does ("I love carrots" vs. "I love carrots"), <strong> is used to give portions of a sentence added importance (e.g., "Warning! This is very dangerous.") Both <strong> and <em> can be nested to increase the relative degree of importance or stress emphasis, respectively.-->
+
+    Link <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element">to MDN about all HTML elements</a>
+
+
+
+</body>
+
+</html>
