@@ -43,26 +43,24 @@ footer {
 .wrapper {
     width: 80%;
     margin: 0 auto;
-    /*border: 1px solid red;*/
 }
 
 header {
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
+    padding-bottom: 0.5rem ;
 }
 
 .leftheader {
     flex-basis: 40%;
     text-align: right;
     padding-right: 0.5rem;
-    /*border: 1px solid green;*/
 }
 
 .rightheader {
     flex-basis: 60%;
     padding-left: 0.5rem;
-    /*border: 1px solid black;*/
     margin-top: 3.5rem;
 }
 
