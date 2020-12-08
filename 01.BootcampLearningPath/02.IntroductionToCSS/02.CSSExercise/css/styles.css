@@ -16,7 +16,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h2 {
-    font-size: 2rem;
+    font-size: 2em;
     color: #A51F10;
     margin: 0;
 }
@@ -24,6 +24,7 @@ h2 {
 a {
     color: #DA0090;
     text-decoration: none;
+    font-size: 1em;
 }
 
 a:hover {
@@ -31,13 +32,13 @@ a:hover {
 }
 
 .posted {
-    font-size: 0.8rem;
+    font-size: 0.8em;
     color: #89A611;
 }
 
 footer {
     text-align: center;
-    font-size: 0.8rem;
+    font-size: 0.8em;
 }
 
 .wrapper {
@@ -77,18 +78,17 @@ header {
 nav {
     border-bottom: 1px solid #A61F11;
     border-top: 1px solid #DA0090;
-}
+} 
 
-nav ul {
+/*nav ul {
     text-align: center;
     list-style-type: none;
     margin: 0;
     padding: 0;
-} 
+}
 
 nav li {
     display: inline-block;
-    /*border: 1px solid gold;*/
 }
 
 nav a {
@@ -96,6 +96,28 @@ nav a {
 }
 
 nav a {
+    text-decoration: none;
+    color: #73352E;
+    display: block;
+    padding: 0.5rem 1rem;
+}*/
+
+nav ul {
+    border: 1px solid black;
+    padding: 0;
+    flex-basis: 50%;
+    display: flex;
+    flex-flow: row nowrap;
+    margin: 0;
+    justify-content: center;
+    list-style-type: none;
+}
+nav li {
+    border: 1px solid red;
+}
+
+nav a {
+    border: 1px solid yellow;
     text-decoration: none;
     color: #73352E;
     display: block;
