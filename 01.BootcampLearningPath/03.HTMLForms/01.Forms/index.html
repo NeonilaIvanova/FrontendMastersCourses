@@ -12,7 +12,9 @@
         <section>
             <h1>Alien Abduction Order Form</h1>
             <p>Fill out the form below to place an order for an alien abduction by one of our fine UFOs.</p>
-            <form>
+            <form action="https://e3vwdl4bpd.execute-api.us-west-2.amazonaws.com/default/API2SES" method="POST">
+                <input type="hidden" name="send_to" value="neonilaiv@gmail.com">
+
                 <fieldset>
                     <legend>Your contact information</legend>
                     <label for="name">Your name</label>
@@ -21,13 +23,17 @@
                     <input type="tel" id="phone" name="phone">
                     <label for="email">Email</label>
                     <input type="email" id="email" name="email">
+
                 </fieldset>
+
                 <fieldset>
+
                     <legend>About your abduction </legend>
                     <label for="date">Requested  date</label>
                     <input type="date" id="date" name="date">
                     <label for="qty">How many people would you like abducted?</label>
                     <input type="number" id="qty" name="qty" min="1" max="10">
+
                     <p>What type of UFO do you prefer?</p>
                     <label>
 						<input type="radio" name="ufotype" value="classic"> Classic oval UFOs
@@ -42,16 +48,23 @@
 						<input type="radio" name="ufotype" value="borg"> Borg-style cube 
 					</label>
                     <label for="abtype">What type of abduction experience do you want?</label>
-                    <select id="abtype">
+
+                    <select id="abtype" name="abtype">
 						<option selected>Select one...</option>
 						<option value="tour">Tour of the solar system</option>
 						<option value="dinner">Alien dinner and discussion</option>
 						<option value="dance">Alien dance lessons</option>
 						<option value="whales">Whale watching</option>
 					</select>
+
+                    <label>Special requests:</label>
+                    <textarea id="comments" name="comments"></textarea>
+
+                    <label for="subscribe">
+						<input type="checkbox" id="subscribe" value="subscribe" name="subscribe" checked>Add me to your email list
+					</label>
                 </fieldset>
-                <p>Special requests:</p>
-                <p>Add me to your email list</p>
+                <button type="submit">Submit</button>
             </form>
         </section>
         <aside>
@@ -64,6 +77,7 @@
 			</address>
         </aside>
     </div>
+    <script src="js/forms.js"></script>
 </body>
 
 </html>
