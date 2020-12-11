@@ -38,7 +38,7 @@ function handleSymbol(value) {
             previousOperator = null;
             display = buffer;
             break;
-        case '=':
+        case '&equals;':
             if (previousOperator === null) {
                 return;
             }
@@ -49,7 +49,7 @@ function handleSymbol(value) {
             resultDisplayed = true;
             display = buffer;
             break;
-        case "←":
+        case "&larrb;":
             if (buffer.length === 1) {
                 buffer = "0";
                 display = buffer;
@@ -78,11 +78,11 @@ function handleMath(value) {
 }
 
 function flushOperation(intBuffer) {
-    if (previousOperator === "+") {
+    if (previousOperator === "&plus;") {
         runningTotal += intBuffer;
-    } else if (previousOperator === "-") {
+    } else if (previousOperator === "&minus;") {
         runningTotal -= intBuffer;
-    } else if (previousOperator === "×") {
+    } else if (previousOperator === "&times;") {
         runningTotal *= intBuffer;
     } else {
         runningTotal /= intBuffer;

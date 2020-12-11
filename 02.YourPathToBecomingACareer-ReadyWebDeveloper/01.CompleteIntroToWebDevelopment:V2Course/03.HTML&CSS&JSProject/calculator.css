@@ -8,7 +8,9 @@ body {
 }
 
 .calc {
-    width: 402px;
+    display: flex;
+    flex-flow: column nowrap;
+    width: 400px;
     background-color: black;
     color: white;
 }
@@ -22,16 +24,16 @@ body {
 
 .calc-row {
     display: flex;
-    align-content: stretch;
+    flex-flow: row nowrap;
     justify-content: space-between;
-    margin-bottom: 0.5%;
+    margin: 0.9% 0 0.9% 0;
 }
 
 .calc-button {
     background-color: #d8d9db;
     color: black;
     height: 100px;
-    width: 24.6%;
+    flex-basis: 24.4%;
     border: none;
     border-radius: 0;
     font-size: 40px;
@@ -64,9 +66,14 @@ body {
 }
 
 .double {
-    width: 49.7%;
+    flex-basis: 49.7%;
 }
 
 .triple {
-    width: 74.8%;
+    flex-basis: 75.3%;
+}
+
+.calc-row:last-child {
+    padding: 0;
+    margin-bottom: 0.5%;
 }
