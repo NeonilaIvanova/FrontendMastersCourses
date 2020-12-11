@@ -6,3 +6,4 @@ time:<br>
 03 - 2 hours, 4 minutes<br>
 04 - 0 hours, 54 minutes<br>
 05 - 0 hours, 48 minute<br>
+06 - 5 hours, 23 minutes<br>
