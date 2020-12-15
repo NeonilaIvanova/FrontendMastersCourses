@@ -2,20 +2,22 @@ let runningTotal = 0;
 let buffer = "0";
 let previousOperator = null;
 const screen = document.querySelector('.screen');
-const buttons = document.querySelectorAll('.calc-button');
+const buttons = document.querySelector('.calc-buttons');
 let display = "";
 let resultDisplayed = false;
 
 function buttonClick(value) {
     if (isNaN(parseInt(value))) {
         handleSymbol(value);
+        console.log(value);
     } else if (resultDisplayed == true) {
-        console.log(resultDisplayed);
+        console.log(value);
         buffer = value;
         display = buffer;
         resultDisplayed = false;
     } else {
         handleNumber(value);
+        console.log(value);
     }
     rerender();
 }
@@ -32,13 +34,13 @@ function handleNumber(value) {
 
 function handleSymbol(value) {
     switch (value) {
-        case 'C':
+        case "C":
             buffer = "0";
             runningTotal = 0;
             previousOperator = null;
             display = buffer;
             break;
-        case '&equals;':
+        case "=":
             if (previousOperator === null) {
                 return;
             }
@@ -49,7 +51,7 @@ function handleSymbol(value) {
             resultDisplayed = true;
             display = buffer;
             break;
-        case "&larrb;":
+        case "←":
             if (buffer.length === 1) {
                 buffer = "0";
                 display = buffer;
@@ -78,11 +80,11 @@ function handleMath(value) {
 }
 
 function flushOperation(intBuffer) {
-    if (previousOperator === "&plus;") {
+    if (previousOperator === "+") {
         runningTotal += intBuffer;
-    } else if (previousOperator === "&minus;") {
+    } else if (previousOperator === "−") {
         runningTotal -= intBuffer;
-    } else if (previousOperator === "&times;") {
+    } else if (previousOperator === "×") {
         runningTotal *= intBuffer;
     } else {
         runningTotal /= intBuffer;
@@ -91,7 +93,6 @@ function flushOperation(intBuffer) {
 
 function rerender() {
     screen.innerText = display;
-    console.log(buffer);
 }
 
 /* function init() {
@@ -103,11 +104,17 @@ function rerender() {
 } */
 
 function init() {
-    buttons.forEach((button) => {
+    buttons.addEventListener('click', (event) => {
+        if (event.target.tagName === 'BUTTON') {
+            buttonClick(event.target.innerText);
+        }
+    });
+}
+
+/*     buttons.forEach((button) => {
         button.addEventListener('click', () => {
             buttonClick(event.target.innerText);
         });
-    });
-}
+    }); */
 
 init();
