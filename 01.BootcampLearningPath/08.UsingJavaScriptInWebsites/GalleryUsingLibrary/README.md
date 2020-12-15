@@ -1,0 +1,1 @@
+# Gallery project using 3rd party Library Swiper
