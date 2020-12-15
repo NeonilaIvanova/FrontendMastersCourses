@@ -9,16 +9,14 @@ let resultDisplayed = false;
 function buttonClick(value) {
     if (isNaN(parseInt(value))) {
         handleSymbol(value);
-        console.log(value);
     } else if (resultDisplayed == true) {
-        console.log(value);
         buffer = value;
         display = buffer;
         resultDisplayed = false;
     } else {
         handleNumber(value);
-        console.log(value);
     }
+    console.log(value);
     rerender();
 }
 
