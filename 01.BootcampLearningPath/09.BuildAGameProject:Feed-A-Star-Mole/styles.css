@@ -26,6 +26,7 @@ body {
 }
 
 .hole {
+    margin: 0.8rem;
     background-color: black;
     border-radius: 50%;
     overflow: visible;
@@ -63,4 +64,13 @@ button {
     color: wheat;
     border: none;
     border-radius: 5px;
+}
+
+.worm {
+    width: 1660px;
+}
+
+.worm-container {
+    overflow: hidden;
+    width: 0.1%;
 }

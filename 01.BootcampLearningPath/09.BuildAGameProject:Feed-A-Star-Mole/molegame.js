@@ -1,15 +1,19 @@
 let score = 0;
 
-function getSadInterval() {
-    return Date.now() + 1000;
+function getInterval() { 
+  return Date.now() + 2000 + Math.floor(Math.random() * 15000);
 }
 
-function getGoneInterval() {
-    return Date.now() + Math.floor(Math.random() * 3000) + 2000;
+function getSadInterval() {
+    return Date.now() + 800;
 }
 
 function getHungryInterval () {
-    return Date.now() + Math.floor(Math.random() * 3000) + 2000;
+    return Date.now() + 3000;
+}
+
+function getKingStatus () {
+    return Math.random() > .9;
 }
 
 const moles = [
@@ -81,26 +85,38 @@ function getNextStatus (mole) {
         case "fed":
             mole.next = getSadInterval();
             mole.status = "leaving";
+            if (mole.king) {
+                mole.node.children[0].src = './img/king-mole-leaving.png';
+            } else {
             mole.node.children[0].src = './img/mole-leaving.png';
+            }
             break;
         case "leaving":
-            mole.next = getGoneInterval();
+            mole.next = getInterval();
             mole.status = 'gone';
             mole.node.children[0].classList.add("gone");
             break;
         case "gone":
             mole.next = getHungryInterval();
             mole.status = 'hungry';
-            // mole.king = getKingStatus();
+            mole.king = getKingStatus();
             mole.node.children[0].classList.add("hungry");
             mole.node.children[0].classList.remove("gone");
+            if (mole.king) {
+                mole.node.children[0].src = './img/king-mole-hungry.png';
+            } else {
             mole.node.children[0].src = './img/mole-hungry.png';
+            }
             break;
         case "hungry":
             mole.next = getSadInterval();
             mole.status = 'sad';
             mole.node.children[0].classList.remove("hungry");
-            mole.node.children[0].src = './img/mole-sad.png';
+            if (mole.king) {
+                mole.node.children[0].src = './img/king-mole-sad.png';
+            } else {
+                mole.node.children[0].src = './img/mole-sad.png';
+            }
             break;
     }
 }
@@ -111,16 +127,22 @@ function feed (event) {
     }
 
     const mole = moles[parseInt(event.target.dataset.index)];
-
+    if (mole.king) {
+        score += 2;
+        mole.node.children[0].src = './img/king-mole-fed.png';
+    } else {
+        score++;
+        mole.node.children[0].src = './img/mole-fed.png';
+    }
     mole.status = 'fed';
     mole.next = getSadInterval();
-    mole.node.children[0].src = './img/mole-fed.png';
     mole.node.children[0].classList.remove('hungry');
 
-    score++;
     if (score >= 10) {
         showWinScreen();
     }
+
+    document.querySelector(".worm-container").style.width = `${10 * score}%`;
 }
 
 function showWinScreen () {
@@ -131,14 +153,39 @@ function showWinScreen () {
     })
 }
 
-let runAgainAt = Date.now() + 100;
+function resumeGame () {
+    document.querySelector('.bg').classList.remove('hide');
+    const wins = document.querySelectorAll('.win');
+    wins.forEach(function(win) {
+        win.classList.add("hide");
+    })
+    score = 0;
+    document.querySelector(".worm-container").style.width = `0.1%`;
+}
 
-function nextFrame () {
+document.querySelector('.bg').addEventListener('click', feed);
+document.querySelector('button').addEventListener('click', resumeGame);
+
+function nextFrame() {
+    const now = Date.now();
+    for (let i = 0; i < moles.length; i++) {
+        if (moles[i].next < now) {
+            getNextStatus(moles[i]);
+        }
+    }
+    requestAnimationFrame(nextFrame);
+};
+
+requestAnimationFrame(nextFrame);
+
+/* let runAgainAt = Date.now() + 100;
+
+function nextFrame() {
     const now = Date.now();
 
-    if (runAgainAt <= now) {
-        for (let i = 0; i < moles.length; i++) {
-            if (moles[i].next <= now) {
+    if (runAgainAt < now) {
+        for(let i = 0; i < moles.length; i++) {
+            if (moles[i].next < now) {
                 getNextStatus(moles[i]);
             }
         }
@@ -147,16 +194,4 @@ function nextFrame () {
     requestAnimationFrame(nextFrame);
 }
 
-function resumeGame () {
-    document.querySelector('.bg').classList.remove('hide');
-    const wins = document.querySelectorAll('.win');
-    wins.forEach(function(win) {
-        win.classList.add("hide");
-    })
-    score = 0;
-}
-
-document.querySelector('.bg').addEventListener('click', feed);
-document.querySelector('button').addEventListener('click', resumeGame);
-
-nextFrame();
+nextFrame(); */
