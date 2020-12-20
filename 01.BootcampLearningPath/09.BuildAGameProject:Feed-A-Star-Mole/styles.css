@@ -49,6 +49,18 @@ body {
     cursor: url(./img/cursor-worm.png), default;
 }
 
-.gone {
+.gone,
+.hide {
     display: none;
+}
+
+button {
+    margin-top: 4rem;
+    padding: 1rem 3rem;
+    cursor: pointer;
+    font-size: 40px;
+    background-color: darkolivegreen;
+    color: wheat;
+    border: none;
+    border-radius: 5px;
 }
