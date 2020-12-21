@@ -8,4 +8,6 @@ time:<br>
 05 - 0 hours, 48 minute<br>
 06 - 5 hours, 23 minutes<br>
 07 - 1 hours, 13 minutes<br>
-08 - 2 hours, 14 minutes
+08 - 3 hours, 2 minutes<br>
+09 - 2 hours, 14 minutes<br>
+TOTAL: 21h 36m
